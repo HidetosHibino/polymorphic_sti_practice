@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :question do
-    title { "MyString" }
-    body { "MyString" }
+    sequence(:title) { |n| "question_#{n}" }
+    body { "question_note" }
   end
 end

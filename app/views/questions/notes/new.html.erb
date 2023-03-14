@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render 'questions/question', {question: @notable} %>
+
+<div>
+  <%= render 'notes/form', {notable: @notable} %>
+
+  <%= link_to "Edit this question", edit_polymorphic_path(@notable) %> |
+  <%= link_to "Back to question", @notable.class %>
+
+</div>

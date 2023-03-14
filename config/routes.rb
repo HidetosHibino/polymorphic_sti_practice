@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :questions
+
   root 'static_pages#top'
   resources :users do
     # module を使うことで users/:user_id/notes/:id になる
@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   resources :words do
     resources :notes ,module: :words
   end
+
+  resources :questions do
+    resources :notes ,module: :questions
+  end
+
   resources :notes
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

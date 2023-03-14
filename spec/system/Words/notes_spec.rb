@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'notes', type: :system do
+RSpec.describe 'word_notes', type: :system do
   let(:word) { create(:word) }
   let(:note) { create(:word_note, notable: word) }
   

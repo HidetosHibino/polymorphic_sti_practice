@@ -7,4 +7,6 @@
   <%= link_to "Back to questions", questions_path %>
 
   <%= button_to "Destroy this question", @question, method: :delete %>
+  <%= render partial: "notes/note", collection: @question.notes %>
+  <%= link_to "Add note", new_question_note_path(@question) %>
 </div>
