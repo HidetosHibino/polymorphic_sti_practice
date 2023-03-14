@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :questions
   root 'static_pages#top'
   resources :users do
     # module を使うことで users/:user_id/notes/:id になる
