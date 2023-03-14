@@ -1,0 +1,2 @@
+module Words::ReactionsHelper
+end

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render 'reactions/reaction', { reaction: @reaction } %>
+
+<div>
+  <%= link_to "Edit this reaction", edit_reaction_path(@reaction) %> |
+  <%= link_to "Back to reactions", reactions_path %>
+
+  <%= button_to "Destroy this reaction", @reaction, method: :delete %>
+</div>
