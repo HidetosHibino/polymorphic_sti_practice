@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render 'users/user', {user: @notable} %>
+
+<div>
+  <%= render 'notes/form', {notable: @notable} %>
+
+  <%= link_to "Edit this user", edit_polymorphic_path(@notable) %> |
+  <%= link_to "Back to users", @notable.class %>
+
+</div>

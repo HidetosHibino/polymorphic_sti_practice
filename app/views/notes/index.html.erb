@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Notes</h1>
+<% if false %>
+  <div id="notes">
+    <% @notes.each do |note| %>
+      <%= render note %>
+      <p>
+        <%= link_to "Show this notable", note.notable %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
+
+<div id="user_note">
+  <h2>User_Notes</h2>
+  <% @user_notes.each do |note| %>
+    <%= render note %>
+    <p>
+      <%= link_to "Show this notable", note.notable %>
+    </p>
+  <% end %>
+</div>
+
+<div id="word_note">
+  <h2>Word_Notes</h2>
+  <% @word_notes.each do |note| %>
+    <%= render note %>
+    <p>
+      <%= link_to "Show this notable", note.notable %>
+    </p>
+  <% end %>
+</div>

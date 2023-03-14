@@ -5,6 +5,8 @@
 <div>
   <%= link_to "Edit this word", edit_word_path(@word) %> |
   <%= link_to "Back to words", words_path %>
-
   <%= button_to "Destroy this word", @word, method: :delete %>
+
+  <%= render partial: "notes/note", collection: @word.notes %>
+  <%= link_to "Add note", new_word_note_path(@word) %>
 </div>

@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    # @user_notes = Note.where(notable: @user)
   end
 
   # GET /users/new
@@ -17,6 +18,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @note = Note.new
   end
 
   # POST /users
