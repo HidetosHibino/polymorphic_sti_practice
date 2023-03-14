@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+<h1>New <%= @reaction.type %> </h1>
+
+<%= render 'words/word', {word: @reaction.word} %>
+<div>
+  <%= link_to "Edit this word", edit_polymorphic_path(@reaction.word) %> |
+  <%= link_to "Back to word", @reaction.word %>
+</div>
+<div>
+  <%= render 'reactions/form', { reaction: @reaction }%>
+</div>
+
+
+<%= @reaction.inspect %>

@@ -1,0 +1,32 @@
+<%= form_with model: reaction, url: polymorphic_path([reaction.word, reaction]) do |form| %>
+  <% if reaction.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(reaction.errors.count, "error") %> prohibited this reaction from being saved:</h2>
+
+      <ul>
+        <% reaction.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :word_id, style: "display: block" %>
+    <%= form.text_field :word_id, readonly: true %>
+  </div>
+
+  <div>
+    <%= form.label :type, style: "display: block" %>
+    <%= form.text_field :type, readonly: true %>
+  </div>
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.text_field :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

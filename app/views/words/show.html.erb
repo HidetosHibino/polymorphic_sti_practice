@@ -6,7 +6,25 @@
   <%= link_to "Edit this word", edit_word_path(@word) %> |
   <%= link_to "Back to words", words_path %>
   <%= button_to "Destroy this word", @word, method: :delete %>
-
-  <%= render partial: "notes/note", collection: @word.notes %>
-  <%= link_to "Add note", new_word_note_path(@word) %>
+</div>
+<div>
+  <h2>meanings</h2>
+  <div style="margin-left:20px">
+    <%= render partial: "reactions/reaction", collection: @word.meanings %>
+    <%= link_to "Add meanings", new_word_meaning_path(@word) %>
+  </div>
+</div>
+<div>
+  <h2>samples</h2>
+  <div style="margin-left:20px">
+    <%= render partial: "reactions/reaction", collection: @word.samples %>
+    <%= link_to "Add samples", new_word_sample_path(@word) %>
+  </div>
+</div>
+<div>
+  <h2>notes</h2>
+  <div style="margin-left:20px">
+    <%= render partial: "notes/note", collection: @word.notes %>
+    <%= link_to "Add note", new_word_note_path(@word) %>
+  </div>
 </div>
