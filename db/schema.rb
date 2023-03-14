@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_14_012812) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_14_072614) do
   create_table "notes", force: :cascade do |t|
     t.string "notable_type", null: false
     t.integer "notable_id", null: false
     t.string "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "author_id"
+    t.index ["author_id"], name: "index_notes_on_author_id"
     t.index ["notable_type", "notable_id"], name: "index_notes_on_notable"
   end
 
@@ -40,4 +42,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_012812) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "notes", "users", column: "author_id"
 end

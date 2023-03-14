@@ -5,6 +5,7 @@ RSpec.describe 'word_notes', type: :system do
   let(:note) { create(:word_note, notable: word) }
   
   describe 'word_noteの作成' do
+    let!(:user) { create(:user) }
     context 'word_noteの作成' do
       before { visit new_word_note_path(word) }
 
