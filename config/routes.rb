@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :notes ,module: :words
     resources :meanings, module: :words, controller: :reactions, type: 'Meaning'
     resources :samples, module: :words, controller: :reactions, type: 'Sample'
+    resources :sounds, module: :words, controller: :reactions, type: 'Sound'
   end
 
   resources :questions do
@@ -17,10 +18,10 @@ Rails.application.routes.draw do
   resources :notes
 
   resources :reactions
-
   resources :meanings, controller: :reactions
-
   resources :samples, controller: :reactions
+  resources :sounds, controller: :reactions
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

@@ -5,6 +5,7 @@ class Word < ApplicationRecord
     has_many :reactions
     has_many :meanings
     has_many :samples
+    has_many :sounds
 
   def note_title
     "word: #{name}"
