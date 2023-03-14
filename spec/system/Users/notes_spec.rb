@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'notes', type: :system do
+RSpec.describe 'user_notes', type: :system do
   let(:user) { create(:user) }
   let(:note) { create(:user_note, notable: user) }
   

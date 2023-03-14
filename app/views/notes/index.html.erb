@@ -31,3 +31,13 @@
     </p>
   <% end %>
 </div>
+
+<div id="question_note">
+  <h2>Question_Notes</h2>
+  <% @question_notes.each do |note| %>
+    <%= render note %>
+    <p>
+      <%= link_to "Show this notable", note.notable %>
+    </p>
+  <% end %>
+</div>
