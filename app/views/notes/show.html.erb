@@ -1,0 +1,8 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @note %>
+
+<div>
+  <%= link_to "Back to notes", notes_path %>
+  <%= link_to "go to notable", @note.notable %>
+</div>

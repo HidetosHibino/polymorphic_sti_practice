@@ -159,6 +159,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    rbtree (0.4.6)
     regexp_parser (2.7.0)
     rexml (3.2.5)
     rspec-core (3.12.1)
@@ -183,6 +184,10 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    set (1.0.3)
+    sorted_set (1.0.3)
+      rbtree
+      set (~> 1.0)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -231,6 +236,7 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.2)
   rspec-rails (~> 4.0.1)
   selenium-webdriver
+  sorted_set
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails

@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render 'words/word', {word: @notable} %>
+
+<div>
+  <%= render 'notes/form', {notable: @notable} %>
+
+  <%= link_to "Edit this word", edit_polymorphic_path(@notable) %> |
+  <%= link_to "Back to word", @notable.class %>
+
+</div>
