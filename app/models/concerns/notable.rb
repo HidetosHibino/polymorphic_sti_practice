@@ -3,6 +3,7 @@ module Notable
 
   included do
     has_many :notes, as: :notable
+    has_many :note_authors ,through: :notes, source: :author
   end
 
   # メソッド内でクラスごとの分岐を書かない。

@@ -34,7 +34,7 @@ class NotesController < ApplicationController
   private
 
   def note_params
-    params.require(:note).permit(:body)
+    params.require(:note).permit(:body, :author_id)
   end
 
   # @notableの生成は各controllerでオーバーライドして行う
