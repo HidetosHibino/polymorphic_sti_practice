@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+<h1>New <%= @similar.type %> </h1>
+
+<%= render 'words/word', {word: @similar.word} %>
+<div>
+  <%= link_to "Edit this word", edit_polymorphic_path(@similar.word) %> |
+  <%= link_to "Back to word", @similar.word %>
+</div>
+<div>
+  <%= render 'form', { similar: @similar }%>
+</div>

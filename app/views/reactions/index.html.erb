@@ -4,7 +4,11 @@
 
 <div id="reactions">
   <% @reactions.each do |reaction| %>
-    <%= render 'reactions/reaction', {reaction: reaction} %>
+    <% if reaction.type == 'Similar' %>
+      <%= render 'words/similars/similar', {similar: reaction} %>
+    <% else %>
+      <%= render 'reactions/reaction', {reaction: reaction} %>
+    <% end %>
     <p>
       <%= link_to "Show this reaction", reaction %>
     </p>

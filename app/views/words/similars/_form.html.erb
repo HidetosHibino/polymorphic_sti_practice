@@ -1,0 +1,32 @@
+<%= form_with model: similar, url: polymorphic_path([similar.word, similar]) do |form| %>
+  <% if similar.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(similar.errors.count, "error") %> prohibited this similar from being saved:</h2>
+
+      <ul>
+        <% similar.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :word_id, style: "display: block" %>
+    <%= form.text_field :word_id, readonly: true %>
+  </div>
+
+  <div>
+    <%= form.label :type, style: "display: block" %>
+    <%= form.text_field :type, readonly: true %>
+  </div>
+
+  <div>
+    <div style="display: block"></div>
+    <%= form.collection_select :similar_id, Word.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

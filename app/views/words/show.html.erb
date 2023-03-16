@@ -22,6 +22,20 @@
   </div>
 </div>
 <div>
+  <h2>sounds</h2>
+  <div style="margin-left:20px">
+    <%= render partial: "reactions/reaction", collection: @word.sounds %>
+    <%= link_to "Add sounds", new_word_sound_path(@word) %>
+  </div>
+</div>
+<div>
+  <h2>similars</h2>
+  <div style="margin-left:20px">
+    <%= render partial: "words/similars/similar", collection: @word.similars %>
+    <%= link_to "Add similars", new_word_similar_path(@word) %>
+  </div>
+</div>
+<div>
   <h2>notes</h2>
   <div style="margin-left:20px">
     <%= render partial: "notes/note", collection: @word.notes %>
