@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_14_140003) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_15_131705) do
   create_table "notes", force: :cascade do |t|
     t.string "notable_type", null: false
     t.integer "notable_id", null: false
@@ -35,6 +35,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_140003) do
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "similar_id"
+    t.index ["similar_id"], name: "index_reactions_on_similar_id"
     t.index ["word_id"], name: "index_reactions_on_word_id"
   end
 
@@ -53,4 +55,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_14_140003) do
 
   add_foreign_key "notes", "users", column: "author_id"
   add_foreign_key "reactions", "words"
+  add_foreign_key "reactions", "words", column: "similar_id"
 end

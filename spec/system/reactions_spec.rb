@@ -56,6 +56,18 @@ RSpec.describe 'reactions', type: :system do
         expect(current_path).to eq new_word_sound_path(word)
       end
     end
+
+    context 'similar' do
+      let!(:similar_word) { create(:word) }
+      before { visit new_word_similar_path(word) }
+      it 'Similarの作成に成功する' do
+        select similar_word.name, from: "similar_similar_id"
+        click_button 'Create Similar'
+        expect(page).to have_content 'Similar was successfully created.'
+        expect(page).to have_content similar_word.name
+        expect(current_path).to eq word_path(word)
+      end
+    end
   end
 
   describe '画面表示' do 
@@ -83,6 +95,14 @@ RSpec.describe 'reactions', type: :system do
         expect(page).to have_content sound.body
       end
     end
-  end
 
+    context 'similar' do
+      let(:similar_word) { create(:word) }
+      let!(:similar) { create(:similar, similar: similar_word) }
+      it 'reactions_indexの表示確認' do
+        visit reactions_path
+        expect(page).to have_content similar_word.name
+      end
+    end
+  end
 end
