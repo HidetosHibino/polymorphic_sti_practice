@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_15_131705) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_16_163924) do
   create_table "notes", force: :cascade do |t|
     t.string "notable_type", null: false
     t.integer "notable_id", null: false
@@ -40,6 +40,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_131705) do
     t.index ["word_id"], name: "index_reactions_on_word_id"
   end
 
+  create_table "usefuls", force: :cascade do |t|
+    t.integer "sample_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sample_id"], name: "index_usefuls_on_sample_id"
+    t.index ["user_id"], name: "index_usefuls_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -56,4 +65,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_131705) do
   add_foreign_key "notes", "users", column: "author_id"
   add_foreign_key "reactions", "words"
   add_foreign_key "reactions", "words", column: "similar_id"
+  add_foreign_key "usefuls", "reactions", column: "sample_id"
+  add_foreign_key "usefuls", "users"
 end

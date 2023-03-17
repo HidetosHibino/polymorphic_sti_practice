@@ -13,5 +13,15 @@
     <strong>Body:</strong>
     <%= reaction.body %>
   </p>
+  <% if reaction.instance_of?(Sample) %>
+    <div style="margin-left:20px">
+    <% reaction.usefuls.each do |useful| %>
+    <p>
+      <strong>Useful_by User:<%= useful.user.note_title %></strong>
+    </p>
+    <% end %>
+    </div>
+    <%= link_to 'new useful', new_sample_useful_path(reaction) %>
+  <% end %>
 
 </div>

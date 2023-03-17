@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Usefuls</h1>
+
+<div id="usefuls">
+  <% @usefuls.each do |useful| %>
+    <%= render useful %>
+    <p>
+      <%= link_to "Show this word", useful.sample.word %>
+    </p>
+  <% end %>
+</div>
