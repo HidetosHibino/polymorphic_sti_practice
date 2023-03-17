@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'usefuls/index'
   namespace :words do
     get 'similar/new'
     get 'similar/create'
@@ -24,9 +25,12 @@ Rails.application.routes.draw do
 
   resources :reactions
   resources :meanings, controller: :reactions
-  resources :samples, controller: :reactions
+  resources :samples, controller: :reactions do
+    resources :usefuls
+  end
   resources :sounds, controller: :reactions
   resources :similars, controller: :reactions
+  resources :usefuls
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

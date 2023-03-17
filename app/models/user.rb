@@ -12,6 +12,8 @@ class User < ApplicationRecord
     has_many :words_I_wrote_note_about,  through: :notes_I_wrote,  source: :notable, :source_type => 'Word'
     has_many :questions_I_wrote_note_about,  through: :notes_I_wrote,  source: :notable, source_type: 'Question'
 
+    has_many :usefuls
+
   def note_title
     "#{first_name} #{last_name}"
   end
