@@ -7,6 +7,15 @@
   <%= link_to "Back to users", users_path %>
   <%= button_to "Destroy this user", @user, method: :delete %>
 
-  <%= render partial: "notes/note", collection: @user.notes %>
-  <%= link_to "Add note", new_user_note_path(@user) %>
+  <h2>notes</h2>
+  <div style="margin-left:20px">
+    <%= render partial: "notes/note", collection: @user.notes %>
+    <%= link_to "Add note", new_user_note_path(@user) %>
+  </div>
+
+  <h2>rates</h2>
+  <div style="margin-left:20px">
+    <%= render partial: "rates/rate", collection: @user.rates %>
+    <%= link_to "Add rate", new_user_rate_path(@user) %>
+  </div>
 </div>

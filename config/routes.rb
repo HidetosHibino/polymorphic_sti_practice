@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users do
     # module を使うことで users/:user_id/notes/:id になる
     resources :notes ,module: :users
+    resources :rates, module: :users
   end
   resources :words do
     resources :notes ,module: :words
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
     resources :samples, module: :words, controller: :reactions, type: 'Sample'
     resources :sounds, module: :words, controller: :reactions, type: 'Sound'
     resources :similars, module: :words
+    resources :rates, module: :words
   end
 
   resources :questions do
@@ -31,6 +33,9 @@ Rails.application.routes.draw do
   resources :sounds, controller: :reactions
   resources :similars, controller: :reactions
   resources :usefuls
+  resources :rates
+  resources :good_rates, controller: :rates
+  resources :bad_rates, controller: :rates
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

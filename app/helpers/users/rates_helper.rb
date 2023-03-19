@@ -1,0 +1,2 @@
+module Users::RatesHelper
+end

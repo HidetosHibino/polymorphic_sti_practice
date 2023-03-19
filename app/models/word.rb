@@ -1,7 +1,8 @@
 class Word < ApplicationRecord
   include Notable
+  include Ratable
 
-  # relastion about Reaction(sti)
+  # relation about Reaction(sti)
     has_many :reactions
     has_many :meanings
     has_many :samples

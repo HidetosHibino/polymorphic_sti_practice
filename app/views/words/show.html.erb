@@ -42,3 +42,10 @@
     <%= link_to "Add note", new_word_note_path(@word) %>
   </div>
 </div>
+<div>
+  <h2>rates</h2>
+  <div style="margin-left:20px">
+    <%= render partial: "rates/rate", collection: @word.rates %>
+    <%= link_to "Add rate", new_word_rate_path(@word) %>
+  </div>
+</div>
