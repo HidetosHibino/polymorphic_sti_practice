@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Rates</h1>
+
+<div id="rates">
+  <% @rates.each do |rate| %>
+    <%= render 'rates/rate', {rate: rate} %>
+  <% end %>
+</div>

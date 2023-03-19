@@ -1,0 +1,28 @@
+<h2>rate_form</h2>
+<p style="color: green"><%= notice %></p>
+<%= form_with model: [rate.ratable, rate], url: [rate.ratable, Rate.new] do |form| %>
+  <% if rate.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(rate.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% rate.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <strong>Type</strong>
+    <%# typeをそのまま表示していい場合は以下 %>
+    <%# <%= form.select :type, Rate::RATE_TYPE_CLASSNAMES %>
+    <%= form.select :rate_type, Rate::RATE_TYPES %>
+  </div>
+  <div>
+    <strong><%= form.label :voter %></strong>
+    <%= form.collection_select :voter_id, User.all, :id, :note_title %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

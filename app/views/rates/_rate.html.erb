@@ -1,0 +1,16 @@
+<div id="<%= dom_id rate %>">
+  <p>
+    <strong>Ratable:</strong>
+    <%= link_to rate.ratable.note_title, rate.ratable %>
+  </p>
+  
+  <p>
+    <strong>Rate_type:</strong>
+    <%= rate.type %>
+  </p>
+
+  <p>
+    <strong>Voter:</strong>
+    <%= link_to rate.voter.note_title, rate.voter %>
+  </p>
+</div>

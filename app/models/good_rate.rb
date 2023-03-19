@@ -1,0 +1,2 @@
+class GoodRate < Rate
+end
